@@ -157,7 +157,7 @@ public class Game extends Canvas implements Runnable {
 ////        }
 //        for (int y1 = 0; y1 < screen.height; y1++) {
 //            for (int x1 = 0; x1 < screen.width; x1++) {
-//                // explicação do & 15: ele sempre irá voltar pro valor inicial 0 ~ 15
+//                // explaining & 15: it will always return to the initual valuew between 0 ~ 15
 //                // screenPixels[x1 + y1 * WIDTH] = SpriteSheet.pixels[(x1 & 15) + (y1 & 15) * SpriteSheet.SPRITESHEET_SIZE];
 //                // repeatable tile: background
 ////                screenPixels[x1 + y1 * WIDTH] = grass.pixelMap[(x1 & 15) + (y1 & 15) * SpriteSheet.TILE_SIZE];
