@@ -15,7 +15,7 @@ class Screen {
     // public final int[] tileset;
     Random random = new Random();
     private Sprite grass;
-    private Sprite mage;
+    private Character mage;
 
     public Screen(int width, int height) {
         this.width = width;
@@ -23,7 +23,7 @@ class Screen {
         this.pixels = new int[width * height];
 
         grass = new Sprite(32, 0);
-        mage = new Sprite(16, 0);
+        mage = new Character(0, 0, new Sprite(16, 0));
 
         // for tiles technique
 //        this.tileset = new int[TILE_SIZE * TILE_SIZE];
@@ -63,12 +63,15 @@ class Screen {
                 if ((xPos < 0) || (xPos >= width) || (yPos < 0) || (yPos >= height)) {
                     continue;
                 }
-                int color = mage.pixelMap[(x & (SpriteSheet.TILE_SIZE - 1)) + (y & (SpriteSheet.TILE_SIZE - 1)) * SpriteSheet.TILE_SIZE];
+                int color = mage.getSprite().pixelMap[(x & (SpriteSheet.TILE_SIZE - 1)) + (y & (SpriteSheet.TILE_SIZE - 1)) * SpriteSheet.TILE_SIZE];
                 if (color != 0xffff00ff) {
                     pixels[xPos + yPos * width] = color;
                 }
+            mage.setPosX(xPos);
+            mage.getPosY(yPos);
             }
         }
+        System.out.println("Character at: " + mage.getPosX() + ", " + mage.getPosY());
     }
 
     void drawAbstract() {

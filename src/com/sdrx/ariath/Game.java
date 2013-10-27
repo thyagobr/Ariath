@@ -112,7 +112,12 @@ public class Game extends Canvas implements Runnable {
             }
         }
     }
-    // testes de mouse input
+    /*
+     * In order to use the Character class' own positioning system, this can't be here.
+     * The event-handling class must have access to the Character class somehow.
+     * If we put it here, the Character would be accessible directly via the Game class.
+     * Is that correct?
+     */
     int x, y = 0;
 
     private void updateGameState() {
